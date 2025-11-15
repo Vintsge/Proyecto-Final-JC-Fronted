@@ -1,0 +1,31 @@
+.formulario-juego {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  width: 350px;
+  margin: auto;
+}
+
+.formulario-juego input,
+textarea {
+  width: 100%;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #bbb;
+}
+
+.estrellas {
+  font-size: 26px;
+  cursor: pointer;
+}
+
+.estrella {
+  color: #aaa;
+}
+
+.estrella.activa {
+  color: gold;
+}
