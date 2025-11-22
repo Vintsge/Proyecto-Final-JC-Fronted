@@ -1,9 +1,100 @@
-.biblioteca-container {
+/* Contenedor principal de la biblioteca */
+.biblioteca-juegos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
   padding: 20px;
+  background-color: #f0f2f5;
+  min-height: 100vh;
 }
 
-.grid-juegos {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  gap: 20px;
+/* Mensaje cuando no hay juegos */
+.biblioteca-juegos p {
+  grid-column: 1 / -1;
+  text-align: center;
+  font-size: 18px;
+  color: #555;
+}
+
+/* Botón de agregar juego */
+.biblioteca-juegos > button {
+  grid-column: 1 / -1;
+  padding: 12px 20px;
+  background-color: #0070f3;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s;
+}
+
+.biblioteca-juegos > button:hover {
+  background-color: #005ac1;
+}
+
+/* Tarjeta de juego */
+.tarjeta-juego {
+  background-color: white;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.tarjeta-juego:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+/* Imagen de portada */
+.tarjeta-juego img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Títulos y textos */
+.tarjeta-juego h3 {
+  margin: 0;
+  font-size: 20px;
+  color: #333;
+}
+
+.tarjeta-juego p {
+  margin: 0;
+  font-size: 14px;
+  color: #555;
+}
+
+/* Botones de editar y eliminar */
+.tarjeta-juego button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.tarjeta-juego button:first-of-type {
+  background-color: #f0ad4e;
+  color: white;
+}
+
+.tarjeta-juego button:first-of-type:hover {
+  background-color: #ec971f;
+}
+
+.tarjeta-juego button:last-of-type {
+  background-color: #d9534f;
+  color: white;
+}
+
+.tarjeta-juego button:last-of-type:hover {
+  background-color: #c9302c;
 }

@@ -1,11 +1,12 @@
 import { useState } from "react";
 import BibliotecaJuegos from "./components/BibliotecaJuegos.jsx";
 import FormularioJuego from "./components/FormularioJuego.jsx";
+import ResenaPage from "./components/resenaPage.jsx";
 
 function App() {
-  const [modo, setModo] = useState("lista"); // lista o formulario
+  const [modo, setModo] = useState("lista");
   const [juegoSeleccionado, setJuegoSeleccionado] = useState(null);
-  const [refrescar, setRefrescar] = useState(false); // para recargar lista
+  const [refrescar, setRefrescar] = useState(false);
 
   return (
     <div>
@@ -13,6 +14,7 @@ function App() {
 
       {modo === "lista" && (
         <BibliotecaJuegos
+          refrescar={refrescar}
           setJuegoSeleccionado={setJuegoSeleccionado}
           setModo={setModo}
         />
@@ -26,6 +28,8 @@ function App() {
           cargarJuegos={() => setRefrescar(!refrescar)}
         />
       )}
+
+      {modo === "resenasPage" && <ResenaPage />}
     </div>
   );
 }

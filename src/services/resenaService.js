@@ -1,30 +1,17 @@
-const API_URL = "http://localhost:4000/api/resenas";
+import axios from "axios";
 
-export async function obtenerResenas(juegoId) {
-  const url = juegoId ? `${API_URL}?juegoId=${juegoId}` : API_URL;
-  const res = await fetch(url);
-  return res.json();
-}
+const API_URL = "http://localhost:3000/api/resenas";
 
-export async function crearResena(data) {
-  const res = await fetch(API_URL, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(data),
-  });
-  return res.json();
-}
+// Obtener reseñas, opcionalmente filtradas por juegoId o nombreJuego
+export const obtenerResenas = (filtros = {}) => {
+  const params = new URLSearchParams(filtros).toString();
+  return axios.get(`${API_URL}${params ? `?${params}` : ""}`);
+};
 
-export async function actualizarResena(id, data) {
-  const res = await fetch(`${API_URL}/${id}`, {
-    method: "PUT",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(data),
-  });
-  return res.json();
-}
-
-export async function eliminarResena(id) {
-  const res = await fetch(`${API_URL}/${id}`, { method: "DELETE" });
-  return res.json();
-}
+export const crearResena = (data) => axios.post(API_URL, data);
+export const actualizarResena = (id, data) => axios.put(`${API_URL}/${id}`, data);
+export const eliminarResena = (id) => axios.delete(`${API_URL}/${id}`);
+export const obtenerResenasPorJuego = async (juegoId) => {
+  const response = await axios.get(`${API_URL}?juegoId=${juegoId}`);
+  return response.data;
+};

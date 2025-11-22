@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { obtenerJuegos, eliminarJuego } from "../services/juegoService.js";
 import TarjetaJuego from "./TarjetaJuegos.jsx";
+import "./BibliotecaJuegos.css";
 
 export default function BibliotecaJuegos({ setJuegoSeleccionado, setModo }) {
   const [juegos, setJuegos] = useState([]);
@@ -46,6 +47,10 @@ export default function BibliotecaJuegos({ setJuegoSeleccionado, setModo }) {
         setJuegoSeleccionado(null);
         setModo("formulario");
       }}>Agregar juego</button>
+      <button onClick={() => setModo("resenasPage")}>
+        Administrar reseñas
+      </button>
+
     </div>
   );
 }
