@@ -1,0 +1,96 @@
+/* ======= TEMA OSCURO GENERAL ======= */
+body {
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #0f1115; /* Fondo oscuro principal */
+  color: #e5e7eb; /* Texto gris claro */
+}
+
+/* CONTENEDOR GENERAL */
+.app-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* TITULO */
+h1 {
+  text-align: center;
+  padding: 25px 0 15px 0;
+  margin: 0;
+  font-size: 2.4rem;
+  color: #8ab4ff; /* Azul gamer */
+  text-shadow: 0 0 10px rgba(138, 180, 255, 0.5);
+}
+
+/* ======= NAVBAR / MENU SUPERIOR ======= */
+.menu-superior {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+
+  background: #1a1d23;
+  padding: 15px 25px;
+  margin: 20px auto 35px auto;
+
+  width: fit-content;
+  border-radius: 14px;
+
+  box-shadow: 0 4px 10px rgba(0,0,0,0.45),
+              0 0 15px rgba(79, 130, 255, 0.1);
+  border: 1px solid #2b2f36;
+}
+
+/* ======= BOTONES DEL MENÚ ======= */
+.menu-superior button {
+  background: linear-gradient(135deg, #3a3f4b, #262a33);
+  color: #d0d4dc;
+  border: 1px solid #4f5563;
+
+  padding: 10px 20px;
+  border-radius: 8px;
+
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.25s ease;
+
+  box-shadow: 0 0 6px rgba(0,0,0,0.5);
+}
+
+/* HOVER */
+.menu-superior button:hover {
+  background: linear-gradient(135deg, #4e73ff, #3954d7);
+  color: white;
+  border-color: #6c84ff;
+
+  box-shadow: 0 0 12px rgba(108, 132, 255, 0.6),
+              0 0 20px rgba(108, 132, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+/* CLICK */
+.menu-superior button:active {
+  transform: scale(0.96);
+}
+
+/* ======= TEXTOS GENERALES ======= */
+p, label, input, textarea, select {
+  color: #f1f1f1;
+}
+
+input, textarea, select {
+  background: #1c1f26;
+  border: 1px solid #333842;
+  border-radius: 6px;
+  padding: 8px;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: #6c84ff;
+  box-shadow: 0 0 6px rgba(108, 132, 255, 0.4);
+}

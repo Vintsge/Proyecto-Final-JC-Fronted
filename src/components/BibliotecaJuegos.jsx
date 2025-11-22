@@ -29,28 +29,25 @@ export default function BibliotecaJuegos({ setJuegoSeleccionado, setModo }) {
     }
   };
 
-  return (
-    <div className="biblioteca-juegos">
-      {juegos.length === 0 ? (
-        <p>No hay juegos aún.</p>
-      ) : (
-        juegos.map(juego => (
+return (
+  <div className="biblioteca-juegos-container">
+    {/* TÍTULO DE LA BIBLIOTECA */}
+    <h2 className="biblioteca-titulo">Biblioteca de Juegos</h2>
+
+    {/* GRID SOLO PARA TARJETAS */}
+    {juegos.length === 0 ? (
+      <p className="no-juegos">No hay juegos aún.</p>
+    ) : (
+      <div className="biblioteca-juegos">
+        {juegos.map(juego => (
           <TarjetaJuego
             key={juego._id}
             juego={juego}
             onEditar={handleEditar}
             onEliminar={handleEliminar}
           />
-        ))
-      )}
-      <button onClick={() => {
-        setJuegoSeleccionado(null);
-        setModo("formulario");
-      }}>Agregar juego</button>
-      <button onClick={() => setModo("resenasPage")}>
-        Administrar reseñas
-      </button>
-
-    </div>
-  );
-}
+        ))}
+      </div>
+    )}
+  </div>
+)}

@@ -1,6 +1,7 @@
+/* ===== FORMULARIO DE JUEGO ===== */
 .formulario-juego {
-  background-color: #1f1f1f;
-  color: #fff;
+  background-color: #242424;      /* Fondo oscuro elegante, igual que las tarjetas */
+  color: #e0e0e0;                 /* Texto claro */
   padding: 30px;
   border-radius: 12px;
   max-width: 500px;
@@ -8,38 +9,42 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
-  transition: transform 0.2s;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.5);
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .formulario-juego:hover {
   transform: scale(1.02);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.6);
 }
 
 .formulario-juego h2 {
   text-align: center;
   margin-bottom: 20px;
-  color: #f0f0f0;
+  color: #4a90e2;                 /* Azul brillante estilo título GameTracker */
+  text-shadow: 0 0 8px rgba(74,144,226,0.8);
 }
 
 .formulario-juego label {
-  font-size: 0.9em;
+  font-size: 0.95em;
   margin-bottom: 4px;
 }
 
 .formulario-juego input,
-.formulario-juego select {
+.formulario-juego select,
+.formulario-juego textarea {
   padding: 10px;
   border-radius: 8px;
   border: none;
-  background-color: #2c2c2c;
-  color: #fff;
+  background-color: #2c2c2c;      /* Igual que los inputs de otras tarjetas */
+  color: #e0e0e0;
   font-size: 0.95em;
 }
 
 .formulario-juego input:focus,
-.formulario-juego select:focus {
-  outline: 2px solid #0070f3;
+.formulario-juego select:focus,
+.formulario-juego textarea:focus {
+  outline: 2px solid #3b82f6;      /* Azul vibrante para focus */
 }
 
 .formulario-juego button {
@@ -48,25 +53,27 @@
   border-radius: 8px;
   font-weight: bold;
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: background-color 0.2s, transform 0.2s;
 }
 
 .formulario-juego button[type="submit"] {
-  background-color: #0070f3;
+  background-color: #3b82f6;      /* Azul vibrante */
   color: #fff;
 }
 
 .formulario-juego button[type="submit"]:hover {
-  background-color: #005ac1;
+  background-color: #2563eb;      /* Azul más intenso */
+  transform: scale(1.05);
 }
 
 .formulario-juego button[type="button"] {
-  background-color: #d9534f;
+  background-color: #ef4444;      /* Rojo moderno */
   color: #fff;
 }
 
 .formulario-juego button[type="button"]:hover {
-  background-color: #c9302c;
+  background-color: #dc2626;
+  transform: scale(1.05);
 }
 
 /* Responsive */

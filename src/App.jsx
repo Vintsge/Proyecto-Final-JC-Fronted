@@ -2,6 +2,7 @@ import { useState } from "react";
 import BibliotecaJuegos from "./components/BibliotecaJuegos.jsx";
 import FormularioJuego from "./components/FormularioJuego.jsx";
 import ResenaPage from "./components/resenaPage.jsx";
+import "./App.css";
 
 function App() {
   const [modo, setModo] = useState("lista");
@@ -11,6 +12,24 @@ function App() {
   return (
     <div>
       <h1>🎮 GameTracker</h1>
+
+            {/* MENÚ SUPERIOR */}
+      <div className="menu-superior">
+        <button onClick={() => setModo("lista")}>Biblioteca</button>
+
+        <button
+          onClick={() => {
+            setJuegoSeleccionado(null);
+            setModo("formulario");
+          }}
+        >
+          Agregar Juego
+        </button>
+
+        <button onClick={() => setModo("resenasPage")}>
+          Administrar Reseñas
+        </button>
+      </div>
 
       {modo === "lista" && (
         <BibliotecaJuegos

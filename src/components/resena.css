@@ -11,164 +11,131 @@
   font-size: 1.8rem;
   font-weight: 600;
   margin-bottom: 10px;
-  color: #222;
+  color: #ececec;
   border-bottom: 2px solid #2196f3;
   padding-bottom: 5px;
 }
 
 /* Tarjeta individual */
 .resena-card {
-  background: #fff;
-  border-radius: 16px;
-  padding: 20px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  background: #1f1f1f;
+  border-radius: 14px;
+  padding: 20px; /* espacio interno para que el formulario no se salga */
+  box-shadow: 0 6px 20px rgba(0,0,0,0.5);
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 15px;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-sizing: border-box; 
 }
 
-.resena-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+/* Hover solo si NO tiene formulario activo */
+.resena-card:not(.con-formulario):hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(74,144,226,0.25);
 }
 
-/* Encabezado de reseña */
+/* Header: autor + puntuación */
 .resena-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-/* Autor y nombre del juego */
-.resena-header span {
-  font-weight: 600;
-  color: #333;
-}
-
-/* Texto de la reseña */
-/* Contenedor general de reseñas */
-.resenas {
-  margin-top: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-/* Título de la sección */
-.resenas h4 {
-  font-size: 1.8rem;
-  font-weight: 600;
   margin-bottom: 10px;
-  color: #222;
-  border-bottom: 2px solid #2196f3;
-  padding-bottom: 5px;
-}
-
-/* Tarjeta individual */
-.resena-card {
-  background: #fff;
-  border-radius: 16px;
-  padding: 20px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.resena-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-}
-
-/* Encabezado de reseña */
-.resena-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 
 /* Autor y nombre del juego */
 .resena-header span {
   font-weight: 600;
-  color: #333;
+  color: #e0e0e0;
 }
 
 /* Texto de la reseña */
 .resena-texto {
   font-size: 1rem;
-  color: #555;
-  line-height: 1.4;
+  color: #ccc;
+  margin-bottom: 10px;
 }
 
-/* Estrellas de puntuación */
-.stars {
-  color: #ffb400;
-  font-size: 1.2rem;
+/* Puntuación */
+.resena-puntuacion {
+  font-weight: 600;
+  color: #4a90e2;
 }
 
-/* Botones */
+/* Botones modernos */
 .resena-buttons {
   display: flex;
   gap: 10px;
-  margin-top: 5px;
 }
 
 .resena-buttons button {
-  padding: 6px 14px;
-  border-radius: 10px;
+  padding: 8px 14px;
   border: none;
+  border-radius: 8px;
   cursor: pointer;
   font-weight: 500;
   transition: all 0.2s ease;
 }
 
-.resena-buttons .editar-btn {
-  background-color: #4caf50;
+.resena-buttons button:hover {
+  opacity: 0.9;
+}
+
+.editar-btn {
+  background-color: #4cadaf;
   color: #fff;
 }
 
-.resena-buttons .eliminar-btn {
+.eliminar-btn {
   background-color: #f44336;
   color: #fff;
 }
 
-.resena-buttons button:hover {
-  transform: translateY(-2px);
-  opacity: 0.9;
-}
-
-/* Formulario moderno */
+/* ===========================
+   FORMULARIO CREAR / EDITAR
+   =========================== */
 .form-resena {
-  background-color: #f4f6f8;
-  padding: 20px;
-  border-radius: 16px;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05);
+  width: 100%; /* ocupar todo el ancho disponible dentro de la tarjeta */
+  box-sizing: border-box; /* que padding no haga que sobresalga */
+  background-color: #2a2a2a;
+  padding: 15px;
+  border-radius: 12px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 15px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+  border: 1px solid #444;
 }
 
 .form-resena input,
-.form-resena textarea,
-.form-resena select {
-  padding: 10px 12px;
-  border-radius: 10px;
-  border: 1px solid #ccc;
+.form-resena textarea {
+  padding: 12px 10px;
+  border-radius: 8px;
+  border: 1px solid #555;
   font-size: 1rem;
   width: 100%;
+  box-sizing: border-box;
+  background-color: #1f1f1f;
+  color: #e0e0e0;
+  resize: vertical;
 }
 
+.form-resena input:focus,
+.form-resena textarea:focus {
+  outline: none;
+  border-color: #4a90e2;
+  box-shadow: 0 0 6px rgba(74,144,226,0.7);
+}
+
+/* Botones */
 .form-resena button {
-  width: fit-content;
-  padding: 10px 18px;
-  border-radius: 12px;
+  padding: 10px 16px;
+  border-radius: 8px;
   border: none;
-  font-weight: 500;
   cursor: pointer;
-  transition: all 0.2s ease;
+  font-weight: 500;
+  transition: 0.2s;
+  width: fit-content;
 }
 
 .form-resena button[type="submit"] {
@@ -178,7 +145,6 @@
 
 .form-resena button[type="submit"]:hover {
   opacity: 0.9;
-  transform: translateY(-2px);
 }
 
 .form-resena button[type="button"] {
@@ -188,27 +154,73 @@
 
 .form-resena button[type="button"]:hover {
   opacity: 0.9;
-  transform: translateY(-2px);
 }
 
-/* Filtros ResenaPage */
+/* ===========================
+   Página de Reseñas
+   =========================== */
+.resenas-page {
+  padding: 30px 20px;
+  max-width: 900px;
+  margin: auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #e0e0e0;
+}
+
+/* Título principal */
+.resenas-page h2 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #4a90e2; /* Azul brillante estilo GameTracker */
+  text-shadow: 0 0 8px rgba(74,144,226,0.7);
+  margin-bottom: 25px;
+}
+
+/* Contenedor de filtros */
 .resenas-filtros {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 20px;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 25px;
 }
 
+/* Inputs y select */
 .resenas-filtros input,
 .resenas-filtros select {
-  padding: 8px 12px;
-  border-radius: 10px;
-  border: 1px solid #ccc;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid #333;
+  background-color: #1e1e1e;
+  color: #e0e0e0;
   font-size: 1rem;
+  min-width: 200px;
+  transition: all 0.2s ease;
 }
 
-/* Indicador de carga */
-.resenas p {
-  font-size: 1rem;
-  color: #666;
+.resenas-filtros input:focus,
+.resenas-filtros select:focus {
+  border-color: #4a90e2;
+  box-shadow: 0 0 6px rgba(74,144,226,0.6);
+  outline: none;
+}
+
+/* Estilo placeholder */
+.resenas-filtros input::placeholder,
+.resenas-filtros select option {
+  color: #aaa;
+}
+
+/* Adaptabilidad para móviles */
+@media (max-width: 600px) {
+  .resenas-filtros {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .resenas-filtros input,
+  .resenas-filtros select {
+    width: 100%;
+  }
 }

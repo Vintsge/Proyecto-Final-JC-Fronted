@@ -1,26 +1,88 @@
-/* Contenedor principal de la biblioteca */
+/* ====== ESTILO GLOBAL ====== */
+body {
+  background-color: #121212;
+  color: #e0e0e0;
+  font-family: "Segoe UI", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* ====== TÍTULO PRINCIPAL ====== */
+h1 {
+  text-align: center;
+  color: #ffffff;
+  margin-top: 20px;
+}
+
+/* ====== MENÚ SUPERIOR ====== */
+.menu-superior {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.menu-superior button {
+  background: #1e1e1e;
+  color: #ffffff;
+  border: 1px solid #333;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: 0.2s ease;
+}
+
+.menu-superior button:hover {
+  background: #333;
+}
+
+
+/* ====== BIBLIOTECA DE JUEGOS ====== */
+/* Contenedor general */
+.biblioteca-juegos-container {
+  padding: 20px;
+}
+
+/* Título de la biblioteca */
+.biblioteca-titulo {
+  text-align: center;
+  color: #4a90e2;           
+  font-size: 26px;
+  font-weight: bold;
+  margin-bottom: 20px;       
+  text-shadow: 0 0 8px rgba(74,144,226,0.8);
+}
+
+/* Contenedor de tarjetas de juegos */
+.biblioteca-juegos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+
 .biblioteca-juegos {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 20px;
   padding: 20px;
-  background-color: #f0f2f5;
+  background-color: #121212;
   min-height: 100vh;
 }
 
-/* Mensaje cuando no hay juegos */
 .biblioteca-juegos p {
   grid-column: 1 / -1;
   text-align: center;
   font-size: 18px;
-  color: #555;
+  color: #bdbdbd;
 }
 
-/* Botón de agregar juego */
+/* Botón principal dentro de la biblioteca */
 .biblioteca-juegos > button {
   grid-column: 1 / -1;
   padding: 12px 20px;
-  background-color: #0070f3;
+  background-color: #1f6feb;
   color: white;
   border: none;
   border-radius: 8px;
@@ -30,27 +92,28 @@
 }
 
 .biblioteca-juegos > button:hover {
-  background-color: #005ac1;
+  background-color: #1158c7;
 }
 
-/* Tarjeta de juego */
+
+/* TARJETA DE JUEGO */
 .tarjeta-juego {
-  background-color: white;
+  background-color: #242424;         
   border-radius: 12px;
-  padding: 16px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 24px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.35);
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 16px;
   transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .tarjeta-juego:hover {
   transform: translateY(-5px);
-  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.5);
 }
 
-/* Imagen de portada */
+/* Imagen */
 .tarjeta-juego img {
   width: 100%;
   height: 150px;
@@ -58,43 +121,102 @@
   border-radius: 8px;
 }
 
-/* Títulos y textos */
+/* Título y texto */
 .tarjeta-juego h3 {
   margin: 0;
   font-size: 20px;
-  color: #333;
+  color: #e5e5e5;               
 }
 
 .tarjeta-juego p {
   margin: 0;
   font-size: 14px;
-  color: #555;
+  color: #c0c0c0;              
+}
+p {
+  margin: 4px 0;
+  font-size: 14px;
+  color: #c0c0c0; /* color general de texto */
 }
 
-/* Botones de editar y eliminar */
-.tarjeta-juego button {
-  padding: 8px 12px;
+p strong {
+  color: #b0b0b0; /* color de los labels como Género, Plataforma */
+}
+
+p .valor-juego {
+  color: #8f9ca5; /* color para los valores, verde moderno */
+  font-weight: 500;
+}
+
+
+/* ===== BOTONES DE LA TARJETA ===== */
+
+/* Botón EDITAR */
+.tarjeta-juego button.editar {
+  background-color: #3b82f6;
+  color: #fff;
   border: none;
   border-radius: 6px;
+  padding: 8px 12px;
   cursor: pointer;
   font-weight: 500;
-  transition: background-color 0.2s;
+  transition: 0.2s ease;
 }
 
-.tarjeta-juego button:first-of-type {
-  background-color: #f0ad4e;
-  color: white;
+.tarjeta-juego button.editar:hover {
+  background-color: #2563eb;
 }
 
-.tarjeta-juego button:first-of-type:hover {
-  background-color: #ec971f;
+/* Botón ELIMINAR */
+.tarjeta-juego button.eliminar {
+  background-color: #ef4444;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.2s ease;
 }
 
-.tarjeta-juego button:last-of-type {
-  background-color: #d9534f;
-  color: white;
+.tarjeta-juego button.eliminar:hover {
+  background-color: #dc2626;
+}
+/* Botón AGREGAR RESEÑA */
+.tarjeta-juego button.agregar {
+  background-color: #10b981; /* verde moderno */
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.2s ease;
+}
+
+.tarjeta-juego button.agregar-resena:hover {
+  background-color: #059669;
 }
 
 .tarjeta-juego button:last-of-type:hover {
-  background-color: #c9302c;
+  background-color: #dc2626;    
+}
+
+
+
+/*  MENÚ SUPERIOR  */
+.menu-superior button {
+  background: #2a2a2a;
+  color: #eaeaea;
+  border: 1px solid #444;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: 0.2s ease;
+}
+
+.menu-superior button:hover {
+  background: #3a3a3a;
+  border-color: #3b82f6;        
 }
